@@ -18,6 +18,14 @@
 	table.tblone tr:nth-child(2n+1){background:#fff;height:30px;}
 	table.tblone tr:nth-child(2n){background:#f1f1f1;height:30px;}
 	#myform{width:400px;border:1px solid #fff;padding:10px;}
+	.p-image{
+		width: 64px;
+		height: 64px;
+		border-radius: 5px;
+		padding: 3px;
+		border: 1px solid #ddd;
+
+	}
 	</style>
 </head>
 <body>

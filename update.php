@@ -25,8 +25,19 @@
     }
 
     if(isset($_POST["delete"])){
+        $sql = "SELECT * FROM tbl_user WHERE id=$id";
+        $getImage = $db->select($sql);
+        if($getImage){
+            while($delimg = $getImage->fetch_assoc()){
+                $image = $delimg['image'];
+                unlink($image);
+            }
+        }
         $query = "DELETE FROM tbl_user WHERE id=$id";
         $delete = $db->delete($query);
+        if($delete){
+            echo "Data Deleted";
+        }
     }
 ?>
 
@@ -49,6 +60,10 @@
         <tr>
             <td>Skill: </td>
             <td><input type="text" name="skill" value="<?php echo $getData['skill']; ?>"></td>
+        </tr>
+        <tr>
+            <td>Image: </td>
+            <td><img class="p-image" src="<?php echo $getData["image"]; ?>" alt="<?php echo $getData["name"]; ?>"></td>
         </tr>
         <tr>
             <td></td>

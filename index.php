@@ -17,6 +17,7 @@
 <table class="tblone">
     <tr>
         <th>No</th>
+        <th>Image</th>
         <th>Name</th>
         <th>Email</th>
         <th>Skill</th>
@@ -26,6 +27,7 @@
         <?php $i=0; while($row = $read->fetch_assoc()){ $i++;?>
     <tr>
         <td><?php echo $i; ?></td>
+        <td><img class="p-image" src="<?php echo $row["image"]; ?>" alt="<?php echo $row["name"]; ?>"></td>
         <td><?php echo $row["name"]; ?></td>
         <td><?php echo $row["email"]; ?></td>
         <td><?php echo $row["skill"]; ?></td>
